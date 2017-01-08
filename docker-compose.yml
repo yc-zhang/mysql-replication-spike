@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  master:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: Password12
+    ports:
+      - "3777:3306"
+    volumes:
+      - ./master:/etc/mysql/mysql.conf.d
+
+  slave:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: Password12
+    ports:
+      - "3778:3306"
+    volumes:
+      - ./slave:/etc/mysql/mysql.conf.d
+
+  slave-slave:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: Password12
+    ports:
+      - "3779:3306"
+    volumes:
+      - ./slave-slave:/etc/mysql/mysql.conf.d
