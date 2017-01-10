@@ -14,3 +14,4 @@ server_id         = 2
 relay_log         = mysql-relay-bin
 log_slave_updates = 1
 read_only         = 1
+binlog_format=STATEMENT

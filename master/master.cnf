@@ -11,3 +11,4 @@ symbolic-links=0
 # replication-settings
 log-bin=mysql-bin
 server-id=1
+binlog_format=STATEMENT
